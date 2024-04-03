@@ -48,8 +48,7 @@ const GptSearchBar = () => {
   
       console.log(tmdbResult)
       dispatch(addGptMovieResult({movieNames:gptMovies,movieResult:tmdbResult}))
-      
-  
+
 
   }
 

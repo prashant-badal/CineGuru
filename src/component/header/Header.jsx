@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react'
-import img from "../../asset/image/Netflix_Logo_PMS.png"
+import img from "../../asset/image/cineguru-4-3-2024 (4).png"
 
-import logo from '../../asset/image/signInLogo.png'
+
 import { auth } from '../utils/firebase'
 import { useNavigate } from 'react-router-dom'
 import { onAuthStateChanged, signOut } from 'firebase/auth'
 import { useDispatch, useSelector } from 'react-redux'
-import { store } from '../utils/redux/appstore'
+
 import { addUser, removeUser } from '../utils/redux/slice/userSlice'
 import { SUPPORTED_LANGUAGE, SignLOGO_URL } from '../utils/constant/constant'
 import { toggleGptSearch } from '../utils/redux/slice/gptSlice'
@@ -57,7 +57,7 @@ useEffect(()=>{
   }
   return (
     <>
-    <div  className="absolute z-77 px-8 py-2 bg-gradient-to-b from-black z-10 w-full flex justify-between bg-opacity-50">
+    <div  className="absolute z-77 px-8 py-2 bg-gradient-to-b from-black z-10 w-full flex justify-between bg-opacity-50 ">
         <img className="w-44" src={img} alt='logo'/>
         
       
@@ -65,7 +65,7 @@ useEffect(()=>{
 
         <div className='flex p-2'> 
         {showGPT &&
-          <select className='p-2 m-2 bg-gray-900 text-white' onClick={handleLanguageChange}>{
+          <select className='p-2 m-2 bg-gray-900 text-white ' onClick={handleLanguageChange}>{
             SUPPORTED_LANGUAGE.map(lang=><option key={lang.identifier} value={lang.identifier}> {lang.name}</option>
               )
             
