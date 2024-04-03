@@ -5,9 +5,10 @@ import { API_options } from '../component/utils/constant/constant';
 
 const useMovieTrailor = (movieId) => {
     const dispatch=useDispatch();
-  
+    const trailorVideo=useSelector(store=>store.movie.trailorVideo);
 
     const getMovieVideos=async ()=>{
+     
       
        const data=await fetch("https://api.themoviedb.org/3/movie/" +movieId+ "/videos?language=en-US",API_options);
         const json=await data.json();
@@ -21,7 +22,8 @@ const useMovieTrailor = (movieId) => {
         
       };
       useEffect(()=>{
-        getMovieVideos();
+        !trailorVideo && getMovieVideos();
+       
       },[])
   return (
     <div>
