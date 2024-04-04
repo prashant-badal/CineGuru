@@ -93,21 +93,26 @@ else{
    <div>
 
     <Header/>
-    <div className='absolute'>
-        <img src={BG_URL} alt='backgroundImg'/>
+    <div className='absolute '>
+        <img  className='fixed h-screen w-screen object-cover' src={BG_URL} alt='backgroundImg'/>
+        <img   src={BG_URL} alt='backgroundImg'/>
     </div>
-    <form onSubmit={(e)=>e.preventDefault()} className='absolute w-3/12  p-12 my-36 mx-auto right-0 left-0    bg-black bg-opacity-80'>
-        <div className=' text-white text-3xl font-bold '>{isSignIn ?"Sign In":"Sign Up "}</div>
+    <form onSubmit={(e)=>e.preventDefault()} className='absolute w-[80%] md:w-3/12  p-10 my-36 mx-auto right-0 left-0    bg-black bg-opacity-80'>
 
-        {!isSignIn &&  <input ref={name}  className="p-4 my-4 w-full font-bold bg-yellow-50" type='text' placeholder='Name'/> }
+        <div className=' text-white text-2xl md:text-3xl py-4 font-bold '>
+          {isSignIn ?"Sign In":"Sign Up "}
+          </div>
+
+        {!isSignIn && 
+         <input ref={name}  className="p-2 my-2 w-full font-bold  bg-gray-200" type='text' placeholder='Name'/> }
        
-        <input  ref={email} className="p-4 my-4 w-full font-bold bg-yellow-50" type='text' placeholder='email/phone'/>
-        <input ref={password} className="p-2 w-full font-bold bg-yellow-50" type='password' placeholder='PaasWord'/>
+        <input  ref={email} className="p-2 my-2 w-full font-bold  bg-gray-200" type='text' placeholder='Email'/>
+        <input ref={password} className="p-2 my-2 w-full font-bold bg-gray-200" type='password' placeholder='PaasWord'/>
 
         <p className='text-red-700 p-2 '>{errMes}</p>
          <button className='p-4 my-4 w-full bg-red-700' onClick={handdleClickButton}>{isSignIn ?"Sign In":"Sign Up "}</button>
        
-                 <p className='py-4  text-white cursor-pointer' onClick={toggleSignIn}>{isSignIn? "already Sign ! Explore more Netflix":" New to Netflix ? Sign Up Now"}</p>
+                 <p className='py-4  text-white cursor-pointer' onClick={toggleSignIn}>{isSignIn? "New to CineGuru ? Click  Sign Up":"Already Account ! Click  Sign In"}</p>
      
         
     </form>

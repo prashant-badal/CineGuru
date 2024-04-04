@@ -58,8 +58,8 @@ const GptSearchBar = () => {
 
 
   return (
-    <div className='pt-[10%] flex justify-center'>
-      <form onSubmit={(e)=>e.preventDefault()} className='w-[60%] bg-black grid grid-cols-12 
+    <div className='pt-[30%] md:pt-[10%] flex justify-center'>
+      <form onSubmit={(e)=>e.preventDefault()} className='w-full md:w-[60%] bg-black grid grid-cols-12 
     
       ' >
         <input type="text"
