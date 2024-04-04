@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import img from "../../asset/image/cineguru-4-3-2024 (4).png"
 
+
 import { auth } from '../utils/firebase'
 import { useNavigate } from 'react-router-dom'
 import { onAuthStateChanged, signOut } from 'firebase/auth'
@@ -55,7 +56,8 @@ useEffect(()=>{
     dispatch( changeLanguage(e.target.value))
   }
   return (
-    <>
+  
+
     <div  className="absolute z-77 px-8 py-2 bg-gradient-to-b from-black z-10 w-full flex justify-between
     flex-col md:flex-row
     
@@ -64,13 +66,17 @@ useEffect(()=>{
     
     ">
         <img className="w-44 mx-auto md:mx-0 " src={img} alt='logo'/>
+
+    <div  className="absolute z-77 px-8 py-2 bg-gradient-to-b from-black z-10 w-full flex justify-between bg-opacity-50 ">
+        <img className="w-44" src={img} alt='logo'/>
+
         
       
       {user && (
 
         <div className='flex p-2 mx-auto md:mx-0  ' > 
         {showGPT &&
-          <select className='p-2 m-2 bg-gray-900 text-white' onClick={handleLanguageChange}>{
+          <select className='p-2 m-2 bg-gray-900 text-white ' onClick={handleLanguageChange}>{
             SUPPORTED_LANGUAGE.map(lang=><option key={lang.identifier} value={lang.identifier}> {lang.name}</option>
               )
             
@@ -91,10 +97,10 @@ useEffect(()=>{
       )}
       
     </div>
-   
+   </div>
    
     
-    </>
+  
   )
 }
 
